@@ -1,0 +1,1 @@
+PS1="%F{green}$prompt_hostname%f [%F{yellow}%/%f]> ";

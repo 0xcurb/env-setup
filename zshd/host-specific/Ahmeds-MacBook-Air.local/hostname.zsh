@@ -1,0 +1,1 @@
+prompt_hostname='mac-air';

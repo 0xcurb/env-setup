@@ -1,3 +1,5 @@
+# TODO: install homebrew and jq
+
 function _config-homebrew-path -d 'This function invokes homebrew to set the shell environment'
     eval (/opt/homebrew/bin/brew shellenv)
 end

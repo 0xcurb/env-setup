@@ -1,0 +1,1 @@
+git config -l | grep -q alias.lol || git config --global --add alias.lol "log --all --abbrev-commit --oneline --graph"

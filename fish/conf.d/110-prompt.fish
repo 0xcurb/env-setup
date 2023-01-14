@@ -34,7 +34,7 @@ function fish_prompt -d 'Write out the prompt'
         else
             set git_status (set_color green):
         end
-        set git_info "[$git_branch $git_status"(set_color white)"]"
+        set git_info "[$git_branch $git_status"(set_color -o white)"]"
     end
   
   set git_prompt "$(set_color white)$git_info"
@@ -46,7 +46,7 @@ function fish_prompt -d 'Write out the prompt'
     set display_color (set_color -o red)
   end
 
-  printf "%s[%s]%s%s >%s " $display_color $prompt_hostname $git_prompt $display_color (set_color normal)
+  printf "%s[%s%s%s]%s%s >%s " (set_color -o white) $display_color $prompt_hostname (set_color -o white) $git_prompt $display_color (set_color normal)
 end
 
 function fish_right_prompt

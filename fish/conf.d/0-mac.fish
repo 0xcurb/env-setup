@@ -1,5 +1,19 @@
-if test "$(uname | tr [:upper:] [:lower:])"=='darwin'
-    function _platform-install-pkg-mgr
+if test "$(uname | tr [:upper:] [:lower:])" = 'darwin'
+
+    function _platform-find-pkg-mgr -d 'Checks if the package manager exists'
+        set brew_possible_paths '/opt/homebrew/bin'
+
+        for brew_path in brew_possible_paths
+            if test -e "$brew_path/brew"
+                return 0
+            end
+        end
+
+        return 1
+    end
+    
+    function _platform-install-pkg-mgr -d 'Installs brew if not found'
+        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
     end
 
     function _platform-install-pkg -a pkg
@@ -7,6 +21,7 @@ if test "$(uname | tr [:upper:] [:lower:])"=='darwin'
     end
 
     function _platform-find-pkg -a pkg
-        test (brew ls | grep $pkg)
+        brew ls | grep -q $pkg
     end
+
 end

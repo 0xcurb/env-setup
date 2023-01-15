@@ -1,4 +1,7 @@
-# TODO: install homebrew and jq
+function _install-bootstrap_tools -d 'Install tools needed for bootstrap'
+    install-pkg-mgr
+    install-pkg 'jq'
+end
 
 function _config-homebrew-path -d 'This function invokes homebrew to set the shell environment'
     eval (/opt/homebrew/bin/brew shellenv)

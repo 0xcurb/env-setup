@@ -32,7 +32,7 @@ function fish_prompt -d 'Write out the prompt'
                 end
             end
         else
-            set git_status (set_color green):
+            set git_status (set_color green)✓
         end
         set git_info "[$git_branch $git_status"(set_color -o white)"]"
     end

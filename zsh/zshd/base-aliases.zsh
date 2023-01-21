@@ -1,3 +1,5 @@
-function install-base-aliases(){
+function _install-base-aliases(){
 	alias ll='ls -al';
 }
+
+_install-base-aliases

@@ -6,6 +6,10 @@ function install-pkg-mgr -d 'Install the platform package manager, if not instal
     end
 end
 
+function setup-pkg-mgr-env -d 'Configure the environment for the package manager, if needed'
+    _platform-setup-pkg-mgr-env
+end
+
 function install-pkg -a pkg -d 'Install a package, if not found'
     find-pkg $pkg
     

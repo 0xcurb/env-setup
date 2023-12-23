@@ -1,3 +1,3 @@
 is-linux() {
-    [[ "$(uname | tr [:upper:] [:lower:])" =~ "linux" ]]
+    [[ "$(uname | tr '[:upper:]' '[:lower:]')" =~ "linux" ]]
 }

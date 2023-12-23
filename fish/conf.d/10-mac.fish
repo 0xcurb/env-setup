@@ -1,4 +1,8 @@
-if test "$(uname | tr [:upper:] [:lower:])" = 'darwin'
+function is-mac -d 'Returns 0 if the current platform is Mac'
+    test "$(uname | tr [:upper:] [:lower:])" = 'darwin'
+end
+
+if is-mac
 
     function _platform-find-pkg-mgr -d 'Checks if the package manager exists'
         set brew_possible_paths '/opt/homebrew/bin'

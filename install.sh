@@ -34,7 +34,7 @@ function install_fish() {
 }
 
 function install_zsh() {
-    _link_dir "$CURRENT_DIR/zsh/zshd" "$ENV_SETUP_CONFIG_DIR/zsh/conf.d"
+    _link_dir "$CURRENT_DIR/zsh/conf.d" "$ENV_SETUP_CONFIG_DIR/zsh/conf.d"
     _link_file "$CURRENT_DIR/zsh/zshrc.zsh" "$HOME/.zshrc"
 }
 

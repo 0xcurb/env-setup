@@ -39,6 +39,7 @@ function fish_prompt -d 'Write out the prompt'
   
   set git_prompt "$(set_color white)$git_info"
   set prompt_hostname (conf-key 'prompt_hostname')
+  set current_dir (basename (pwd))
 
   if test $laststatus -eq 0
     set display_color (set_color -o green)
@@ -46,12 +47,5 @@ function fish_prompt -d 'Write out the prompt'
     set display_color (set_color -o red)
   end
 
-  printf "%s[%s%s%s]%s%s >%s " (set_color -o white) $display_color $prompt_hostname (set_color -o white) $git_prompt $display_color (set_color normal)
-end
-
-function fish_right_prompt
-    set -q fish_prompt_pwd_dir_length
-    or set -lx fish_prompt_pwd_dir_length 0
-
-    printf "%s[%s]%s" (set_color -o yellow) (prompt_pwd) (set_color normal)
+  printf "%s[%s%s%s][%s%s%s]%s%s%s \n➜%s " (set_color -o white) $display_color $prompt_hostname (set_color -o white) (set_color -o yellow) $current_dir (set_color -o white) $git_prompt $display_color (set_color normal)
 end

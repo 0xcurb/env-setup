@@ -1,2 +1,5 @@
 CONF_DIR="$HOME/.config"
+CUSTOM_CONF_DIR="$CONF_DIR/custom"
+
 HOST_CONF_DIR="$CONF_DIR/host-config"
+CUSTOM_HOST_CONF_DIR="$CUSTOM_CONF_DIR/host-config"

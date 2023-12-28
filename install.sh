@@ -42,6 +42,11 @@ function install_host_config() {
     _link_dir "$CURRENT_DIR/host-config" "$ENV_SETUP_CONFIG_DIR/host-config"
 }
 
+function install_custom() {
+    _link_dir "$CURRENT_DIR/custom" "$ENV_SETUP_CONFIG_DIR/custom"
+}
+
 install_host_config
 install_fish
 install_zsh
+install_custom

@@ -46,7 +46,12 @@ function install_custom() {
     _link_dir "$CURRENT_DIR/custom" "$ENV_SETUP_CONFIG_DIR/custom"
 }
 
+function install_git_config() {
+    _link_dir "$CURRENT_DIR/git" "$ENV_SETUP_CONFIG_DIR/git"
+}
+
 install_host_config
 install_fish
 install_zsh
 install_custom
+install_git_config

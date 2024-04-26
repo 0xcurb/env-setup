@@ -8,7 +8,7 @@ if is-mac; then
     _platform-find-pkg-mgr() {
         brew_possible_paths='/opt/homebrew/bin'
 
-        for brew_path in brew_possible_paths; do
+        for brew_path in $brew_possible_paths; do
             if [[ -e "$brew_path/brew" ]]; then
                 _PKG_MGR_PATH=$brew_path
                 return 0
@@ -31,7 +31,7 @@ if is-mac; then
     }
 
     _platform-add-pkg-mgr-to-path() {
-        eval ($_PKG_MGR_PATH shellenv)
+        eval $($_PKG_MGR_PATH/brew shellenv)
     }
 
 fi
